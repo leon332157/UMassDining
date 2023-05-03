@@ -1,0 +1,26 @@
+{
+  "name": "umassdining",
+  "version": "0.0.1",
+  "description": "umass dining api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leon332157/UMassDining.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leon332157/UMassDining/issues"
+  },
+  "homepage": "https://github.com/leon332157/UMassDining#readme",
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
