@@ -2,6 +2,7 @@
 // configuration parameters are located at authConfig.js
 import * as msal from "@azure/msal-browser";
 import { msalConfig, loginRequest, tokenRequest } from "./authConfig";
+import { showWelcomeMessage,updateUI } from "./ui";
 const myMSALObj = new msal.PublicClientApplication(msalConfig);
 let username = "";
 
@@ -45,7 +46,7 @@ function handleResponse(response: msal.AuthenticationResult | null) {
   }
 }
 
-function signIn() {
+export function signIn() {
   /**
    * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
@@ -54,7 +55,7 @@ function signIn() {
   myMSALObj.loginRedirect(loginRequest);
 }
 
-function signOut() {
+export function signOut() {
   /**
    * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
@@ -88,7 +89,7 @@ function getTokenRedirect(request: msal.RedirectRequest) {
   });
 }
 
-function seeProfile() {
+export function seeProfile() {
   getTokenRedirect(loginRequest)
     .then(response => {
       //@ts-ignore

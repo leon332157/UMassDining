@@ -1,21 +1,26 @@
+import { seeProfile, signIn, signOut } from "./authRedirect";
+
+//import { signIn, signOut } from "./authPopup";
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
 const signInButton = document.getElementById("SignIn");
 const cardDiv = document.getElementById("card-div");
-const mailButton = document.getElementById("readMail");
 const profileButton = document.getElementById("seeProfile");
 const profileDiv = document.getElementById("profile-div");
 
-function showWelcomeMessage(username:string) {
+signInButton!.onclick = signIn;
+profileButton!.onclick = seeProfile;
+
+export function showWelcomeMessage(username: string) {
   // Reconfiguring DOM elements
   cardDiv!.style.display = "initial";
   welcomeDiv!.innerHTML = `Welcome ${username}`;
-  signInButton!.setAttribute("onclick", "signOut();");
+  signInButton!.onclick = signOut;
   signInButton!.setAttribute("class", "btn btn-success");
   signInButton!.innerHTML = "Sign Out";
 }
 
-function updateUI(data:any, endpoint:any) {
+export function updateUI(data: any, endpoint: any) {
   console.log("Graph API responded at: " + new Date().toString());
   console.log(data);
   if (endpoint === graphConfig.graphMeEndpoint) {

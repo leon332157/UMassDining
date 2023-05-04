@@ -3,7 +3,7 @@
 import * as msal from "@azure/msal-browser";
 import { msalConfig, loginRequest, tokenRequest } from "./authConfig";
 const myMSALObj = new msal.PublicClientApplication(msalConfig);
-
+import { showWelcomeMessage,updateUI } from "./ui";
 let username = "";
 
 function selectAccount() {

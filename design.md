@@ -2,6 +2,7 @@
 
 ## Tools
 - [ ] TypeScript
+- [ ] Parcel
 - [ ] Gulp
 - [ ] React?
 
