@@ -1,7 +1,7 @@
 {
   "include": ["src/**/*"],
   "compilerOptions": {
-    "lib": ["es2022"],
+    "lib": ["es2022", "dom"],
     "module": "es2022",
     "target": "es2022",
     "strict": true,
@@ -21,7 +21,7 @@
     "noUnusedParameters": false,
     "importsNotUsedAsValues": "remove",
     "outDir": "out/",
-    "sourceMap": true,
+    "sourceMap": false,
     "allowJs": true
   },
   "ts-node": {
