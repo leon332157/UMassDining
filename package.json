@@ -5,14 +5,14 @@
   "scripts": {
     "start:https": "parcel src/index.html -p 8443 --https --dist-dir out",
     "start": "parcel src/index.html -p 3000 --dist-dir out",
-    "build": "parcel build src/index.html --no-optimize",
+    "build": "parcel build src/index.html --no-optimize --no-content-hash --no-scope-hoist",
+    "build:prod": "parcel build src/index.html",
     "clean": "rimraf -rf dist out",
     "build:tsc": "tsc",
     "lint": "eslint src --ext .ts",
     "build:copy": "cpy src/*/* !src/*.ts out",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "wrangler pages publish dist",
-    "build:publish": "npm run build && npm run publish"
+    "publish:page": "wrangler pages publish dist",
+    "publish": "npm run build:prod && npm run publish:page"
   },
   "targets": {
     "modern": {

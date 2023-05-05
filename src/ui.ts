@@ -1,6 +1,6 @@
-import { seeProfile, signIn, signOut } from "./authRedirect";
+//import { seeProfile, signIn, signOut } from "./authRedirect";
 import { graphConfig } from "./graph";
-//import { signIn, signOut } from "./authPopup";
+import { seeProfile, signIn, signOut } from "./authPopup";
 // Select DOM elements to work with
 const welcomeDiv = document.getElementById("WelcomeMessage");
 const signInButton = document.getElementById("SignIn");

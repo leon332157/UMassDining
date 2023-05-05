@@ -14,8 +14,8 @@
 
 ## 1. Authencation
 
-- [ ] Use [msal](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser) for Microsoft OAuth2 login.
-- [ ] Use email as identifier for database?
+- ❓ Use [msal](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser) for Microsoft OAuth2 login.
+- ❓ Use email as identifier for database?
 
 ## 2. Interface
 TODO

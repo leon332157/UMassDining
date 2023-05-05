@@ -3,9 +3,11 @@
 import * as msal from "@azure/msal-browser";
 import { msalConfig, loginRequest, tokenRequest } from "./authConfig";
 const myMSALObj = new msal.PublicClientApplication(msalConfig);
-import { showWelcomeMessage,updateUI } from "./ui";
+import { showWelcomeMessage, updateUI } from "./ui";
+import { callMSGraph, graphConfig } from "./graph";
 let username = "";
 
+await myMSALObj.initialize()
 function selectAccount() {
   /**
    * See here for more info on account retrieval:
@@ -95,7 +97,7 @@ function getTokenPopup(request: msal.PopupRequest) {
   });
 }
 
-function seeProfile() {
+export function seeProfile() {
   getTokenPopup(loginRequest)
     .then(response => {
       if (response) {
