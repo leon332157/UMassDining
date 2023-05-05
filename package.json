@@ -3,12 +3,21 @@
   "version": "0.0.1",
   "description": "umass dining api",
   "scripts": {
-    "start": "parcel src/index.html -p 8443 --https",
-    "build": "parcel build src/index.html --no-source-maps --no-optimize",
-    "build:tsc" : "tsc",
+    "start:https": "parcel src/index.html -p 8443 --https --dist-dir out",
+    "start": "parcel src/index.html -p 3000 --dist-dir out",
+    "build": "parcel build src/index.html --no-optimize",
+    "clean": "rimraf -rf dist out",
+    "build:tsc": "tsc",
     "lint": "eslint src --ext .ts",
     "build:copy": "cpy src/*/* !src/*.ts out",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "wrangler pages publish dist",
+    "build:publish": "npm run build && npm run publish"
+  },
+  "targets": {
+    "modern": {
+      "outputFormat": "global"
+    }
   },
   "repository": {
     "type": "git",
@@ -35,8 +44,10 @@
     "morgan": "^1.10.0",
     "parcel": "^2.8.3",
     "prettier": "^2.8.8",
+    "rimraf": "^5.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "wrangler": "^2.19.0"
   },
   "type": "module"
 }

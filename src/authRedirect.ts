@@ -1,8 +1,9 @@
 // Create the main myMSALObj instance
 // configuration parameters are located at authConfig.js
 import * as msal from "@azure/msal-browser";
-import { msalConfig, loginRequest, tokenRequest } from "./authConfig";
-import { showWelcomeMessage,updateUI } from "./ui";
+import { msalConfig, loginRequest } from "./authConfig";
+import { showWelcomeMessage, updateUI } from "./ui";
+import { callMSGraph, graphConfig } from "./graph";
 const myMSALObj = new msal.PublicClientApplication(msalConfig);
 let username = "";
 

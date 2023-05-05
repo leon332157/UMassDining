@@ -1,9 +1,8 @@
 # Design Document
 
 ## Tools
-- [ ] TypeScript
-- [ ] Parcel
-- [ ] Gulp
+- [x] TypeScript
+- [x] Parcel
 - [ ] React?
 
 ## 0. Goals

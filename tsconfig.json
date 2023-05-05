@@ -1,5 +1,6 @@
 {
   "include": ["src/**/*"],
+  "exclude": ["src/authPopup.ts"],
   "compilerOptions": {
     "lib": ["es2022", "dom"],
     "module": "ES2022",
@@ -22,7 +23,7 @@
     "importsNotUsedAsValues": "remove",
     "outDir": "out/",
     "sourceMap": false,
-    "allowJs": true
+    "allowJs": false
   },
   "ts-node": {
     "esm": true

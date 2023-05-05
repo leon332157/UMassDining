@@ -2,11 +2,10 @@
  * Helper function to call MS Graph API endpoint
  * using the authorization bearer token scheme
  */
-const graphConfig = {
+export const graphConfig = {
   graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
-  graphMailEndpoint: "https://graph.microsoft.com/v1.0/me/messages",
 };
-function callMSGraph(endpoint: RequestInfo | URL, token: string, callback: { (data: any, endpoint: any): void; (data: any, endpoint: any): void; (data: any, endpoint: any): void; (data: any, endpoint: any): void; (arg0: any, arg1: any): any; }) {
+export function callMSGraph(endpoint: RequestInfo | URL, token: string, callback: { (data: any, endpoint: any): void; (data: any, endpoint: any): void; (data: any, endpoint: any): void; (data: any, endpoint: any): void; (arg0: any, arg1: any): any; }) {
   const headers = new Headers();
   const bearer = `Bearer ${token}`;
 
