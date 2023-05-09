@@ -1,9 +1,10 @@
 # Design Document
 
-## Tools
+## Todo
 - [x] TypeScript
 - [x] Parcel
 - [ ] React?
+- [ ] Logo
 
 ## 0. Goals
 

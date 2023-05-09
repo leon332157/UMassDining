@@ -25,37 +25,16 @@
     <nav style="background-color: rgb(160, 43, 43) !important" class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="/">UMass Dining Test</a>
       <div class="btn-group ml-auto dropleft">
-        <button type="button" id="SignIn" class="btn btn-secondary" onclick="signIn()">Sign In</button>
+        <button type="button" id="signInPopup" class="btn btn-secondary">Sign In PopUp</button>
+        <br />
+        <!--button type="button" id="signInRedirect" class="btn btn-secondary">Sign In Redirect</button-->
+        <br />
+        <button type="button" onclick = "localStorage.clear();sessionStorage.clear();window.location.reload();alert('cleared')">Clear Storages</button>
       </div>
     </nav>
     <br />
-    <h5 class="card-header text-center">UMass Dining Test</h5>
-    <br />
-    <div class="row" style="margin: auto">
-      <div id="card-div" class="col-md-3" style="display: none">
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title" id="WelcomeMessage">Please sign-in to see your profile</h5>
-            <div id="profile-div"></div>
-            <br />
-            <br />
-            <button class="btn btn-primary" id="seeProfile" onclick="seeProfile()">See Profile</button>
-            <br />
-            <br />
-          </div>
-        </div>
-      </div>
-      <br />
-      <br />
-      <div class="col-md-4">
-        <div class="list-group" id="list-tab" role="tablist"></div>
-      </div>
-      <div class="col-md-5">
-        <div class="tab-content" id="nav-tabContent"></div>
-      </div>
-    </div>
-    <br />
-    <br />
+    <h5 class="card-header text-center" id="main-text">Welcome! Click login to login with UMass NetID</h5>
+    <p id = "acc-count"></p>
 
     <!-- importing bootstrap.js and supporting js libraries -->
     <script
@@ -74,6 +53,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- importing app scripts (load order is important) -->
-    <script type="module" src="ui.ts"></script>
+    <script type="module" src="main.ts"></script>
   </body>
 </html>

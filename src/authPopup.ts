@@ -3,28 +3,11 @@
 import * as msal from "@azure/msal-browser";
 import { msalConfig, loginRequest, tokenRequest } from "./authConfig";
 const myMSALObj = new msal.PublicClientApplication(msalConfig);
-import { showWelcomeMessage, updateUI } from "./ui";
+// @ts-ignore
+window.msalObj = myMSALObj;
+import { showWelcomeMessage, updateUI } from "./main";
 import { callMSGraph, graphConfig } from "./graph";
 let username = "";
-
-await myMSALObj.initialize()
-function selectAccount() {
-  /**
-   * See here for more info on account retrieval:
-   * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-common/docs/Accounts.md
-   */
-
-  const currentAccounts = myMSALObj.getAllAccounts();
-  if (currentAccounts.length === 0) {
-    return;
-  } else if (currentAccounts.length > 1) {
-    // Add choose account code here
-    console.warn("Multiple accounts detected.");
-  } else if (currentAccounts.length === 1) {
-    username = currentAccounts[0].username;
-    showWelcomeMessage(username);
-  }
-}
 
 function handleResponse(response: msal.AuthenticationResult) {
   /**
@@ -40,7 +23,7 @@ function handleResponse(response: msal.AuthenticationResult) {
   }
 }
 
-export function signIn() {
+export function signInPopup() {
   /**
    * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
@@ -54,7 +37,7 @@ export function signIn() {
     });
 }
 
-export function signOut() {
+export function signOutPopup() {
   /**
    * You can pass a custom request object below. This will override the initial configuration. For more information, visit:
    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/request-response-object.md#request
@@ -110,5 +93,3 @@ export function seeProfile() {
       console.error(error);
     });
 }
-
-selectAccount();

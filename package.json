@@ -14,7 +14,7 @@
     "publish:page": "wrangler pages publish dist",
     "publish": "npm run build:prod && npm run publish:page"
   },
-  "targets": {
+  "//": {
     "modern": {
       "outputFormat": "global"
     }
