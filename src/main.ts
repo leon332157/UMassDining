@@ -12,11 +12,8 @@ msalObj.initialize().then(() => {
   selectAccount();
 });
 
-const profileButton = document.getElementById("seeProfile");
 const profileDiv = document.getElementById("profile-div");
 const mainText = document.getElementById("main-text");
-
-let signOut: any = null;
 
 const signInPopupButton = document.getElementById("signInPopup");
 signInPopupButton!.onclick = () => {
@@ -41,11 +38,11 @@ export function showWelcomeMessage(user: msal.AccountInfo) {
   cardDiv!.style.display = "initial";
   welcomeDiv!.innerHTML = `Welcome ${username}`; */
   signInPopupButton!.setAttribute("class", "btn btn-secondary");
-  signInRedirectButton!.setAttribute("class", "btn btn-secondary");
+  //signInRedirectButton!.setAttribute("class", "btn btn-secondary");
   signInPopupButton!.onclick = signOutPopup;
-  signInRedirectButton!.onclick = signOutRedirect;
+  //signInRedirectButton!.onclick = signOutRedirect;
   signInPopupButton!.innerHTML = "Sign Out Popup";
-  signInRedirectButton!.innerHTML = "Sign Out Redirect";
+  //signInRedirectButton!.innerHTML = "Sign Out Redirect";
 }
 
 export function updateUI(data: any, endpoint: any) {
@@ -82,7 +79,7 @@ function selectAccount() {
 
 function handleResponse(resp: msal.AuthenticationResult) {
   if (resp !== null && resp.account !== null) {
-    showWelcomeMessage(resp.account);
+    window.location.reload();
   } else {
     selectAccount();
   }
@@ -111,4 +108,9 @@ function signOutRedirect() {
       return false;
     },
   });
+}
+
+if (window.location.href.endsWith("/reload")) {
+  console.log("reloading");
+  window.location.reload();
 }
