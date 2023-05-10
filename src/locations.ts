@@ -32,6 +32,7 @@ interface DiningLocation {
   reservation_information_plain: string;
   featured_image: string;
 }
+
 export type DiningLocations = DiningLocation[];
 
 export const Locations = data.data as DiningLocations;

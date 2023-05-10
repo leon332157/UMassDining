@@ -1,6 +1,6 @@
 import { writeFileSync, existsSync } from "fs";
 import { join } from "path";
-import { DiningLocations } from "./src/locations.js";
+import { DiningLocations } from "./src/locations";
 
 const jsonPath = join(process.cwd(), "src", "assets", "locations.json");
 if (existsSync(jsonPath)) {
