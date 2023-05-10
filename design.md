@@ -5,6 +5,8 @@
 - [x] Parcel
 - [ ] React?
 - [ ] Logo
+- [ ] Genrate locations by fetching once
+- [ ] Cache Menu api calls?
 
 ## 0. Goals
 

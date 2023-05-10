@@ -4,6 +4,9 @@ import { graphConfig } from "./graph";
 
 import * as msal from "@azure/msal-browser";
 import { msalConfig, loginRequest, tokenRequest } from "./authConfig";
+
+import { Locations } from "./locations";
+
 const msalObj = new msal.PublicClientApplication(msalConfig);
 // @ts-ignore
 window.msalObj = msalObj;
@@ -19,13 +22,6 @@ const signInPopupButton = document.getElementById("signInPopup");
 signInPopupButton!.onclick = () => {
   signInPopup();
   //profileButton!.onclick = authPopup.seeProfile;
-};
-
-const signInRedirectButton = document.getElementById("signInRedirect");
-signInRedirectButton!.onclick = () => {
-  signInRedirect();
-  //profileButton!.onclick = authRedirect.seeProfile;
-  //signOut = authRedirect.signOutRedirect;
 };
 
 export function showWelcomeMessage(user: msal.AccountInfo) {
@@ -114,3 +110,25 @@ if (window.location.href.endsWith("/reload")) {
   console.log("reloading");
   window.location.reload();
 }
+
+for (const location of Locations) {
+  console.log(location.short_name);
+}
+
+fetch("api/menu?location_id=1")
+  .then(res => res.json())
+  .then(console.log);
+/*window.addEventListener("load", () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register(new URL("./sw.ts", import.meta.url));
+
+    navigator.serviceWorker.getRegistration().then(reg => {
+      if (typeof reg === "undefined") {
+        console.log("No service worker registered yet");
+
+        return;
+      }
+    });
+  }
+});
+*/
