@@ -12,9 +12,10 @@
     <!-- adding Bootstrap 4 for UI components  -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css"
+      integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link rel="SHORTCUT ICON" href="https://c.s-microsoft.com/favicon.ico?v2" type="image/x-icon" />
     <link rel="manifest" href="assets/manifest.webmanifest" />
@@ -29,31 +30,32 @@
         <br />
         <!--button type="button" id="signInRedirect" class="btn btn-secondary">Sign In Redirect</button-->
         <br />
-        <button type="button" onclick = "localStorage.clear();sessionStorage.clear();window.location.reload();alert('cleared')">Clear Storages</button>
+        <button
+          type="button"
+          onclick="localStorage.clear();sessionStorage.clear();window.location.reload();alert('cleared')"
+        >
+          Clear Storages
+        </button>
       </div>
     </nav>
     <br />
     <h5 class="card-header text-center" id="main-text">Welcome! Click login to login with UMass NetID</h5>
-    <p id = "acc-count"></p>
+    <p id="acc-count"></p>
 
     <!-- importing bootstrap.js and supporting js libraries -->
     <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/popper.min.js"
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"
       crossorigin="anonymous"
     ></script>
     <!-- importing app scripts (load order is important) -->
     <script type="module" src="main.ts"></script>
-    
   </body>
 </html>

@@ -1,5 +1,5 @@
 import { FluentURL } from "../../src/utils.js";
-import axios from "axios";
+
 export const onRequestGet: PagesFunction = async context => {
   const reqUrl = new URL(context.request.url);
   const locationID: string | null = reqUrl.searchParams.get("location_id");

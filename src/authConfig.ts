@@ -13,7 +13,7 @@ export const msalConfig: msal.Configuration = {
     authority: "https://login.microsoftonline.com/7bd08b0b-3395-4dc1-94bb-d0b2e56a497f",
     // Full redirect URL, in form of http://localhost:3000
     //redirectUri: "https://192.168.1.6:8443/",
-    redirectUri: process.env.NODE_ENV === 'development' ? "http://localhost:3000" : "https://umassdining.pages.dev/",
+    redirectUri: process.env.NODE_ENV === 'development' ? "http://localhost:8788" : "https://umassdining.pages.dev/",
   },
   cache: {
     cacheLocation: "localStorage", // This configures where your cache will be stored

@@ -6,15 +6,21 @@
     "start:https": "parcel src/index.html -p 8443 --https --dist-dir out",
     "start:parcel": "parcel src/index.html -p 3000 --dist-dir out",
     "start": "wrangler pages dev out",
-    "build": "npm run fetchLocations && parcel build src/index.html --no-optimize --no-content-hash --no-scope-hoist --log-level info --dist-dir out",
+    "build": "better-npm-run build:dev",
     "build:prod": "parcel build src/index.html",
     "fetchLocations": "ts-node fetch-locations.ts",
-    "clean": "rimraf -rf dist",
+    "clean": "rimraf -rf dist out",
     "build:tsc": "tsc",
     "lint": "eslint src --ext .ts",
     "build:copy": "cpy src/*/* !src/*.ts out",
     "publish:page": "wrangler pages publish dist",
     "publish": "npm run clean && npm run build:prod && npm run publish:page"
+  },
+  "betterScripts": {
+    "build:dev": {
+      "command": "parcel build src/index.html --no-optimize --no-content-hash --no-scope-hoist --log-level info --dist-dir out",
+      "env":{"NODE_ENV": "development"}
+    }
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "repository": {
@@ -35,6 +41,7 @@
     "@types/express": "^4.17.17",
     "@types/morgan": "^1.9.4",
     "@typescript-eslint/parser": "^5.59.2",
+    "better-npm-run": "^0.1.1",
     "cpy-cli": "^4.2.0",
     "eslint": "^8.39.0",
     "express": "^4.18.2",
@@ -43,7 +50,7 @@
     "rimraf": "^5.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
-    "wrangler": "^2.19.0"
+    "wrangler": "^2"
   },
   "type": "module"
 }
